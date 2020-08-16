@@ -1,0 +1,79 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+string input = "";
+
+class Media {
+ public:
+
+  string title;
+  int year;
+  
+  void getTitle() {cout << "Title: " << title << endl;}
+  void getYear() {cout << "Year:" << year << endl;}
+};
+
+class videoGame: public Media {
+ public:
+
+  string publisher;
+  int rating;
+
+  void getPub() {cout << "Publisher: " << publisher << endl;}
+  void getRating() {cout << "Rating: " << rating << endl;}
+};
+
+class Music: public Media {
+ public:
+
+  string artist;
+  int duration;
+  string publisher;
+
+  void getArtist() {cout << "Artist: " << artist << endl;}
+  void getDuration() {cout << "Duration: " << duration << endl;}
+  void getPublisher() {cout << "Publisher: " << publisher << endl;}
+};
+
+class Movie: public Media {
+ public:
+
+  string director;
+  string duration;
+  string rating;
+
+  void getDirector() {cout << "Director: " << director << endl;}
+  void getDuration() {cout << "Duration: " << duration << endl;}
+  void getRating() {cout << "Rating: " << rating << endl;}
+};
+
+vector<videoGame> videoGames;
+vector<Music> music;
+vector<Movie> movie;
+
+int main() {
+  while (true) {
+    cin >> input;
+    
+    if (input == "ADD" || input == "add") {
+      cout << "What would you like to add? (VideoGame, Music, or Movie)" << endl;
+      cin >> input;
+      if (input == "VideoGame") {
+	videoGames.push_back();
+      }
+    } else if (input == "SEARCH" || input == "search") {
+      //search
+    } else if (input == "exit" || input == "quit") {
+      exit(0);
+    } else {
+      cout << "I don't know what you mean..." << endl;
+      cout << "Commands: add, search, exit/quit." << endl;
+    }
+    
+    cout << endl;
+  }
+  
+  return 0;
+}
